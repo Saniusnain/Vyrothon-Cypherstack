@@ -155,6 +155,7 @@ export default function CipherStack() {
             onRun={run}
             onReset={reset}
             nodeCount={nodes.length}
+            configurableCount={nodes.filter((n) => CIPHERS[n.cipherId]?.configurable).length}
           />
 
           <div className="flex-1 overflow-y-auto px-6 py-4">
@@ -168,11 +169,13 @@ export default function CipherStack() {
               </p>
             )}
 
-            {nodes.length > 0 && nodes.length < 3 && (
-              <p className="text-amber-600 text-xs text-center mb-3">
-                Add at least 3 cipher nodes ({nodes.length} / 3)
-              </p>
-            )}
+            {nodes.length > 0 &&
+              nodes.filter((n) => CIPHERS[n.cipherId]?.configurable).length < 3 && (
+                <p className="text-amber-600 text-xs text-center mb-3">
+                  Add at least 3 configurable cipher nodes (
+                  {nodes.filter((n) => CIPHERS[n.cipherId]?.configurable).length} / 3)
+                </p>
+              )}
 
             {mode === "decrypt" && nodes.length > 0 && (
               <p className="text-zinc-700 text-xs text-center mb-3">

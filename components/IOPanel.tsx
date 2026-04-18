@@ -8,6 +8,7 @@ interface Props {
   onRun: () => void;
   onReset: () => void;
   nodeCount: number;
+  configurableCount: number;
 }
 
 export default function IOPanel({
@@ -18,6 +19,7 @@ export default function IOPanel({
   onRun,
   onReset,
   nodeCount,
+  configurableCount,
 }: Props) {
   const copy = () => {
     try {
@@ -58,9 +60,9 @@ export default function IOPanel({
         >
           Reset
         </button>
-        {nodeCount > 0 && nodeCount < 3 && (
+        {nodeCount > 0 && configurableCount < 3 && (
           <span className="text-xs text-amber-500 text-center">
-            {nodeCount}/3
+            {configurableCount}/3
           </span>
         )}
       </div>
@@ -74,7 +76,7 @@ export default function IOPanel({
         <div className="bg-[#17142A] text-violet-500 rounded px-3 py-2 text-sm font-mono  break-all min-h-18 max-h-24 overflow-y-auto">
           {/* {output || <span className="text-zinc-700">—</span>} */}
 
-          {nodeCount >= 3 ? output : <span className="text-zinc-700">—</span>}
+          {configurableCount >= 3 ? output : <span className="text-zinc-700">—</span>}
         </div>
         {output && (
           <button
