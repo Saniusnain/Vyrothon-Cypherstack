@@ -63,7 +63,7 @@ export default function IOPanel({
             {mode === "encrypt" ? "Encrypted" : "Decrypted"}
           </label>
         </div>
-        <div className="bg-[#17142A] text-[#7C6AF7] rounded px-3 py-2 text-sm font-mono  break-all min-h-18 max-h-24 overflow-y-auto">
+        <div className="bg-[#17142A] text-violet-500 rounded px-3 py-2 text-sm font-mono  break-all min-h-18 max-h-24 overflow-y-auto">
           {output || <span className="text-zinc-700">—</span>}
         </div>
         {output && (

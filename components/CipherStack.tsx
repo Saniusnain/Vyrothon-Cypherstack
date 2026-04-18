@@ -153,9 +153,11 @@ export default function CipherStack() {
           <div className="flex-1 overflow-y-auto px-6 py-4">
             {nodes.length === 0 && (
               <p className="text-zinc-700 text-sm text-center pt-12">
-                <span className="hidden md:inline">Click a cipher in the sidebar</span>
-                <span className="md:hidden">Tap a cipher above</span>
-                {" "}to build your pipeline.
+                <span className="hidden md:inline">
+                  Click a cipher in the sidebar
+                </span>
+                <span className="md:hidden">Tap a cipher above</span> to build
+                your pipeline.
               </p>
             )}
 

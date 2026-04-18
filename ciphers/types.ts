@@ -15,6 +15,7 @@ export interface CipherDefinition {
   configurable: boolean;
   encrypt: (input: string, config: Record<string, unknown>) => string;
   decrypt: (input: string, config: Record<string, unknown>) => string;
+  extra?: boolean;
 }
 
 export interface PipelineNode {

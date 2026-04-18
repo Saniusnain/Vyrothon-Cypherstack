@@ -106,7 +106,7 @@ export default function NodeCard({
                 </span>
               </p>
               <p className="font-mono text-sm">
-                <span className="text-[#7c6af7]">out </span>
+                <span className="text-violet-500">out </span>
                 <span className="text-zinc-300">
                   {result.output.slice(0, 60)}
                   {result.output.length > 60 ? "…" : ""}
