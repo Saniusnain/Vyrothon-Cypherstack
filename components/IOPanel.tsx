@@ -62,18 +62,18 @@ export default function IOPanel({
           <label className="text-xs text-zinc-500 uppercase tracking-widest">
             {mode === "encrypt" ? "Encrypted" : "Decrypted"}
           </label>
-          {output && (
-            <button
-              onClick={copy}
-              className="text-sm text-white transition-colors border border-zinc-600 hover:border-zinc-300 rounded px-2 py-1"
-            >
-              copy
-            </button>
-          )}
         </div>
-        <div className="bg-zinc-900 border border-zinc-800 rounded px-3 py-2 text-sm font-mono text-zinc-400 break-all min-h-[72px] max-h-24 overflow-y-auto">
+        <div className="bg-[#17142A] text-[#7C6AF7] rounded px-3 py-2 text-sm font-mono  break-all min-h-18 max-h-24 overflow-y-auto">
           {output || <span className="text-zinc-700">—</span>}
         </div>
+        {output && (
+          <button
+            onClick={copy}
+            className="w-fit self-end text-sm mt-3 text-white transition-colors border border-zinc-600 hover:border-zinc-300 rounded px-2 py-1"
+          >
+            copy
+          </button>
+        )}
       </div>
     </div>
   );
