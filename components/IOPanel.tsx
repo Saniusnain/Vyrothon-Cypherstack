@@ -24,7 +24,7 @@ export default function IOPanel({
   };
 
   return (
-    <div className="shrink-0 border-b border-red-800 px-6 py-4 flex gap-4 items-start border">
+    <div className="shrink-0 border-b border-zinc-800 px-4 md:px-6 py-4 flex flex-col md:flex-row gap-3 md:gap-4 md:items-start">
       <div className="flex-1 flex flex-col gap-1">
         <label className="text-xs text-zinc-500 uppercase tracking-widest">
           {mode === "encrypt" ? "Plaintext" : "Ciphertext"}
@@ -42,7 +42,7 @@ export default function IOPanel({
         />
       </div>
 
-      <div className="flex flex-col gap-2 pt-5 shrink-0">
+      <div className="flex md:flex-col items-center md:items-stretch justify-end gap-2 shrink-0 md:pt-5">
         <button
           onClick={onRun}
           disabled={!value.trim() || nodeCount === 0}

@@ -9,7 +9,7 @@ interface Props {
 export default function Sidebar({ onAdd }: Props) {
   const ciphers = Object.values(CIPHERS);
   return (
-    <aside className="w-40 shrink-0 border-r border-zinc-800 flex flex-col overflow-y-auto">
+    <aside className="hidden md:flex w-40 shrink-0 border-r border-zinc-800 flex-col overflow-y-auto">
       <p className="px-4 py-3 text-xs text-zinc-600 uppercase tracking-widest border-b border-zinc-800">
         Ciphers
       </p>

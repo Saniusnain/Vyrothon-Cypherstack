@@ -95,7 +95,7 @@ export default function CipherStack() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-zinc-950 text-zinc-100 overflow-hidden border border-green-500">
+    <div className="h-screen flex flex-col bg-zinc-950 text-zinc-100 overflow-hidden">
       <header className="shrink-0 flex items-center justify-between px-6 h-12 border-b border-zinc-800">
         <span className="font-mono text-xs tracking-widest text-zinc-400">
           CIPHERSTACK
@@ -124,6 +124,19 @@ export default function CipherStack() {
         </div>
       </header>
 
+      {/* Mobile cipher strip */}
+      <div className="flex md:hidden overflow-x-auto border-b border-zinc-800 px-4 py-2 gap-2 shrink-0">
+        {Object.values(CIPHERS).map((cipher) => (
+          <button
+            key={cipher.id}
+            onClick={() => addNode(cipher.id)}
+            className="shrink-0 px-3 py-1 text-xs font-mono text-zinc-300 border border-zinc-700 rounded hover:bg-zinc-800 transition-colors"
+          >
+            {cipher.label}
+          </button>
+        ))}
+      </div>
+
       <div className="flex flex-1 overflow-hidden">
         <Sidebar onAdd={addNode} />
 
@@ -140,7 +153,9 @@ export default function CipherStack() {
           <div className="flex-1 overflow-y-auto px-6 py-4">
             {nodes.length === 0 && (
               <p className="text-zinc-700 text-sm text-center pt-12">
-                Click a cipher in the sidebar to add it to the pipeline.
+                <span className="hidden md:inline">Click a cipher in the sidebar</span>
+                <span className="md:hidden">Tap a cipher above</span>
+                {" "}to build your pipeline.
               </p>
             )}
 

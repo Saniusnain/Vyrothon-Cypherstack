@@ -32,7 +32,7 @@ export default function NodeCard({
   index,
 }: Props) {
   return (
-    <div className="bg-zinc-900 border border-blue-500 rounded">
+    <div className="bg-zinc-900 rounded">
       <div className="flex items-center gap-2 px-3 py-2">
         <span className="text-xs text-zinc-600 tabular-nums w-4 shrink-0">
           {index + 1}
@@ -98,15 +98,15 @@ export default function NodeCard({
             <p className="font-mono text-xs text-red-400">{result.error}</p>
           ) : (
             <>
-              <p className="font-mono text-xs">
-                <span className="text-zinc-600">in </span>
+              <p className="font-mono text-sm">
+                <span className="text-[#5aab8a] ">in </span>
                 <span className="text-zinc-500">
                   {result.input.slice(0, 60)}
                   {result.input.length > 60 ? "…" : ""}
                 </span>
               </p>
-              <p className="font-mono text-xs">
-                <span className="text-zinc-600">out </span>
+              <p className="font-mono text-sm">
+                <span className="text-[#7c6af7]">out </span>
                 <span className="text-zinc-300">
                   {result.output.slice(0, 60)}
                   {result.output.length > 60 ? "…" : ""}
