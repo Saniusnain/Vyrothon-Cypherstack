@@ -6,6 +6,7 @@ interface Props {
   output: string;
   mode: "encrypt" | "decrypt";
   onRun: () => void;
+  onReset: () => void;
   nodeCount: number;
 }
 
@@ -15,6 +16,7 @@ export default function IOPanel({
   output,
   mode,
   onRun,
+  onReset,
   nodeCount,
 }: Props) {
   const copy = () => {
@@ -50,6 +52,12 @@ export default function IOPanel({
         >
           Run
         </button>
+        <button
+          onClick={onReset}
+          className="px-4 py-1.5 border border-zinc-700 hover:border-zinc-500 text-zinc-400 hover:text-zinc-200 text-sm rounded transition-colors"
+        >
+          Reset
+        </button>
         {nodeCount > 0 && nodeCount < 3 && (
           <span className="text-xs text-amber-500 text-center">
             {nodeCount}/3
@@ -64,7 +72,9 @@ export default function IOPanel({
           </label>
         </div>
         <div className="bg-[#17142A] text-violet-500 rounded px-3 py-2 text-sm font-mono  break-all min-h-18 max-h-24 overflow-y-auto">
-          {output || <span className="text-zinc-700">—</span>}
+          {/* {output || <span className="text-zinc-700">—</span>} */}
+
+          {nodeCount >= 3 ? output : <span className="text-zinc-700">—</span>}
         </div>
         {output && (
           <button

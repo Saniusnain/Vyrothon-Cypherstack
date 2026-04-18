@@ -19,6 +19,13 @@ export default function CipherStack() {
     setOutput("");
   };
 
+  const reset = () => {
+    setInputText("");
+    setNodes([]);
+    setResults([]);
+    setOutput("");
+  };
+
   const addNode = (cipherId: string) => {
     const cipher = CIPHERS[cipherId];
     if (!cipher) return;
@@ -30,7 +37,6 @@ export default function CipherStack() {
         config: { ...cipher.defaultConfig },
       },
     ]);
-    clearResults();
   };
 
   const removeNode = (id: string) => {
@@ -147,6 +153,7 @@ export default function CipherStack() {
             output={output}
             mode={mode}
             onRun={run}
+            onReset={reset}
             nodeCount={nodes.length}
           />
 
